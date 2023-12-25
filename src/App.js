@@ -10,6 +10,8 @@ import TravelEssential from './components/TravelEssential';
 import IndianCalendarPage from './components/IndianCalendarPage';
 import IndiaMap from './components/IndiaMap';
 import TripPlannerPage from './components/TripPlannerPage';
+import LoginPage from './Pages/Login'; 
+import SignupPage from './Pages/SignUp';
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
           <Route path="/map" component={IndiaMap} />
           <Route path="/india-calendar" component={IndianCalendarPage} />
           <Route path="/plan-your-trip" component={TripPlannerPage} />
+          <Route path="/login" component={LoginPage} />
+          <Route path="/signup" component={SignupPage} />
         </Switch>
         <Footer />
       </div>
