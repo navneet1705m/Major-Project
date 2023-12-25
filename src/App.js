@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import ContactPage from './components/ContactPage';
+import Footer from './components/Footer';
+import Landing from './components/Landing';
+import Navbar from './components/Navbar';
+import SeeAndDo from './components/SeeAndDo';
+import TravelEssential from './components/TravelEssential';
+import IndianCalendarPage from './components/IndianCalendarPage';
+import IndiaMap from './components/IndiaMap';
+import TripPlannerPage from './components/TripPlannerPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="flex flex-col min-h-screen">
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={Landing} />
+          <Route path="/see-and-do" component={SeeAndDo} />
+          <Route path="/travelEssential" component={TravelEssential} />
+          <Route path="/contact" component={ContactPage} />
+          <Route path="/map" component={IndiaMap} />
+          <Route path="/india-calendar" component={IndianCalendarPage} />
+          <Route path="/plan-your-trip" component={TripPlannerPage} />
+        </Switch>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
